@@ -1,15 +1,16 @@
+/*Import font*/
 @font-face
 {
-	font-family: 'Gilroy';
-	src: url('font/Gilroy-Regular.woff') format('woff');
+	font-family: 'OpenSans';
+	src: url('font/OpenSans_Condensed-Regular.ttf') format('ttf');
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face
 {
-	font-family: 'Gilroy Bold';
-	src: url('font/Gilroy-Bold.woff') format('woff');
+	font-family: 'OpenSans Bold';
+	src: url('font/OpenSans_Condensed-Bold.ttf') format('ttf');
 	font-weight: bold;
 	font-style: normal;
 }
@@ -18,18 +19,18 @@ h1
 {
 	color: white;
 	text-align: center;
-	font-family: 'Gilroy Bold';
+	font-family: 'OpenSans Bold';
 }
 
 body
 {
 	background-color: #000;
-	font-family: 'Gilroy';
+	font-family: 'OpenSans';
 }
 
 *
 {
-	font-family: 'Gilroy';
+	font-family: 'OpenSans';
 	list-style: none;
 	text-decoration: none;
 	-webkit-user-select: none;
@@ -38,8 +39,6 @@ body
 	user-select: none;
 }
 
-/* REMOVE SPINNERS FROM NUMBER INPUT */
-/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button
 {
 	-webkit-appearance: none;
@@ -69,7 +68,7 @@ input[type=number]
 {
 	color: #fff;
 	font-size: 1.8rem;
-	font-family: 'Gilroy Bold';
+	font-family: 'OpenSans Bold';
 	display: inline-block;
     text-align: center
 }
@@ -79,12 +78,12 @@ input[type=number]
 	color: #fff;
 	font-size: 3.6rem;
 	margin-top: 10px;
-	font-family: 'Gilroy Bold';
+	font-family: 'OpenSans Bold';
 }
 
 .budget-header .account
 {
-	float: right;
+    float: right;
 	display: inline-block;
 	margin: 0 auto 0;
 	line-height: 2.2rem;
@@ -93,29 +92,30 @@ input[type=number]
 
 .budget-header .account .income .title
 {
-	color: #fff;
+	color: #95B524;
 	opacity: 0.5;
-    font-size: 2.0rem
+    font-size: 2.0rem;
 }
 
 .budget-header .account .income .income-total
 {
-	color: #fff;
-	font-family: 'Gilroy Bold';
-font-size: 1.8rem}
+	color: #95B524;
+	font-family: 'OpenSans Bold';
+font-size: 1.8rem;
+}
 
 .budget-header .account .outcome .title
 {
 	color: #f0624d;
 	opacity: 0.5;
-font-size: 2.0rem
+font-size: 2.0rem;
 }
 
 .budget-header .account .outcome .outcome-total
 {
 	color: #f0624d;
-	font-family: 'Gilroy Bold';
-font-size: 1.8rem
+	font-family: 'OpenSans Bold';
+font-size: 1.8rem;
 }
 
 /*Dashboard*/
@@ -133,7 +133,7 @@ font-size: 1.8rem
 	font-size: 2.2rem;
 	margin-left: 20px;
 	margin-top: 30px;
-	font-family: 'Gilroy Bold';
+	font-family: 'OpenSans Bold';
 }
 
 .toggle
@@ -149,7 +149,7 @@ font-size: 1.8rem
 	cursor: pointer;
 	font-size: 1.3rem;
 	color: #1a0034;
-	font-family: 'Gilroy Bold';
+	font-family: 'OpenSans Bold';
 	opacity: 0.4;
 }
 
@@ -217,7 +217,7 @@ font-size: 1.8rem
 	margin-bottom: 10px;
 	;
 	word-wrap: break-word;
-	font-family: 'Gilroy Bold';
+	font-family: 'OpenSans Bold';
 }
 
 .budget-dashboard #all ul.list li #edit
@@ -275,7 +275,7 @@ font-size: 1.8rem
 	width : 160px;
 	padding-left: 10px;
 	font-size: 1.2rem;
-	font-family: 'Gilroy';
+	font-family: 'OpenSans';
 	margin: 5px;
 	margin-left: 10px;
 	border: none;
@@ -287,7 +287,7 @@ font-size: 1.8rem
 	width : 115px;
 	padding-left: 10px;
 	font-size: 1.2em;
-	font-family: 'Gilroy';
+	font-family: 'OpenSans';
 	margin: 5px;
 	margin-left: -10px;
 	border-radius: 0 10px 10px 0;
@@ -333,7 +333,7 @@ font-size: 1.8rem
 	margin-bottom: 10px;
 	;
 	word-wrap: break-word;
-	font-family: 'Gilroy Bold';
+	font-family: 'OpenSans Bold';
 	color: #f0624d;
 }
 
@@ -390,7 +390,7 @@ font-size: 1.8rem
 	width : 150px;
 	padding-left: 10px;
 	font-size: 1.2em;
-	font-family: 'Gilroy';
+	font-family: 'OpenSans';
 	margin: 5px;
 	margin-left: 10px;
 	border-radius: 10px 0 0 10px;
@@ -403,7 +403,7 @@ font-size: 1.8rem
 	width : 110px;
 	padding-left: 10px;
 	font-size: 1.2em;
-	font-family: 'Gilroy';
+	font-family: 'OpenSans';
 	margin: 5px;
 	margin-left: -10px;
 	border-radius: 0 10px 10px 0;
@@ -449,7 +449,7 @@ font-size: 1.8rem
 	margin-bottom: 10px;
 	;
 	word-wrap: break-word;
-	font-family: 'Gilroy Bold';
+	font-family: 'OpenSans Bold';
 }
 
 .budget-dashboard #income ul.list li #edit
@@ -480,6 +480,12 @@ font-size: 1.8rem
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px)
 {
+ 
+    .budget-header .balance .value {
+    font-size: 1.6rem;
+    
+    }
+    
 	.budget-dashboard, .budget-container
 	{
 		width: 100%;
