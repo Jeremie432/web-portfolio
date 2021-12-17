@@ -1,4 +1,4 @@
-// SELECT ELEMENTS
+// Element
 const Balance = document.querySelector(".balance .value");
 const Income_Total = document.querySelector(".income-total");
 const Outcome_Total = document.querySelector(".outcome-total");
@@ -9,12 +9,12 @@ const List_Income = document.querySelector("#income .list");
 const List_Expense = document.querySelector("#expense .list");
 const List_All = document.querySelector("#all .list");
 
-// SELECT BTNS
+// Button
 const Expense_Button = document.querySelector(".tab1");
 const Income_Button = document.querySelector(".tab2");
 const All_Button = document.querySelector(".tab3");
 
-// INPUT BTS
+// Input
 const Expense_Add = document.querySelector(".add-expense");
 const Expense_Title = document.getElementById("expense-title-input");
 const Expense_Amount = document.getElementById("expense-amount-input");
@@ -23,12 +23,12 @@ const Income_Add = document.querySelector(".add-income");
 const Income_Title = document.getElementById("income-title-input");
 const Income_Amount = document.getElementById("income-amount-input");
 
-// VARIABLES
+// Variables
 let ENTRY_LIST;
 let balance = 0, income = 0, outcome = 0;
 const DELETE = "delete", EDIT = "edit";
 
-// LOOK IF THERE IS SAVED DATA IN LOCALSTORAGE
+// Local storage
 ENTRY_LIST = JSON.parse(localStorage.getItem("entry_list")) || [];
 updateUI();
 
@@ -52,6 +52,13 @@ All_Button.addEventListener("click", function(){
     inactive( [Income_Button, Expense_Button] );
 })
 
+// Erreur Message
+Expense_Add.addEventListener("click", function(){
+    // IF ONE OF THE INPUTS IS EMPTY => EXIT
+    if(!Expense_Title.value || !Expense_Amount.value ) 
+    alert("Title and Rs must be filled up")
+})
+
 Expense_Add.addEventListener("click", function(){
     // IF ONE OF THE INPUTS IS EMPTY => EXIT
     if(!Expense_Title.value || !Expense_Amount.value ) return;
@@ -70,7 +77,14 @@ Expense_Add.addEventListener("click", function(){
 
 Income_Add.addEventListener("click", function(){
     // IF ONE OF THE INPUTS IS EMPTY => EXIT
-    if(!Income_Title.value || !Income_Amount.value ) return;
+    if(!Income_Title.value || !Income_Amount.value ) 
+    alert("Error")
+})
+
+Income_Add.addEventListener("click", function(){
+    // IF ONE OF THE INPUTS IS EMPTY => EXIT
+    if(!Income_Title.value || !Income_Amount.value ) 
+    return;
 
     // SAVE THE ENTRY TO ENTRY_LIST
     let income = {
