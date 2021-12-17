@@ -1,3 +1,4 @@
+
 /*Import font*/
 @font-face
 {
@@ -70,8 +71,7 @@ input[type=number]
 	font-size: 1.8rem;
 	font-family: 'OpenSans Bold';
 	display: inline-block;
-    text-align: center
-}
+text-align: center}
 
 .budget-header .balance .value
 {
@@ -83,7 +83,7 @@ input[type=number]
 
 .budget-header .account
 {
-    float: right;
+	float: right;
 	display: inline-block;
 	margin: 0 auto 0;
 	line-height: 2.2rem;
@@ -94,28 +94,28 @@ input[type=number]
 {
 	color: #95B524;
 	opacity: 0.5;
-    font-size: 2.0rem;
+	font-size: 2.0rem;
 }
 
 .budget-header .account .income .income-total
 {
 	color: #95B524;
 	font-family: 'OpenSans Bold';
-font-size: 1.8rem;
+	font-size: 1.8rem;
 }
 
 .budget-header .account .outcome .title
 {
 	color: #f0624d;
 	opacity: 0.5;
-font-size: 2.0rem;
+	font-size: 2.0rem;
 }
 
 .budget-header .account .outcome .outcome-total
 {
 	color: #f0624d;
 	font-family: 'OpenSans Bold';
-font-size: 1.8rem;
+	font-size: 1.8rem;
 }
 
 /*Dashboard*/
@@ -480,12 +480,11 @@ font-size: 1.8rem;
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px)
 {
- 
-    .budget-header .balance .value {
-    font-size: 1.6rem;
-    
-    }
-    
+	.budget-header .balance .value
+	{
+		font-size: 1.6rem;
+	}
+
 	.budget-dashboard, .budget-container
 	{
 		width: 100%;
