@@ -232,7 +232,7 @@ font-size: 1.8rem;
 	height: 20px;
 	right: 20px;
 	cursor: pointer;
-	background-image: url('images/trash.png');
+	background-image: url('../images/trash.png');
 	background-size: 20px 20px;
 	background-repeat: no-repeat;
 }
@@ -344,7 +344,7 @@ font-size: 1.8rem;
 	height: 20px;
 	right: 50px;
 	cursor: pointer;
-	background-image: url("images/edit.png");
+	background-image: url("../images/edit.png");
 	background-size: 20px 20px;
 	background-repeat: no-repeat;
 }
@@ -356,7 +356,7 @@ font-size: 1.8rem;
 	height: 20px;
 	right: 20px;
 	cursor: pointer;
-	background-image: url('images/trash.png');
+	background-image: url('../images/trash.png');
 	background-size: 20px 20px;
 	background-repeat: no-repeat;
 }
@@ -459,7 +459,7 @@ font-size: 1.8rem;
 	height: 20px;
 	right: 50px;
 	cursor: pointer;
-	background-image: url("images/edit.png");
+	background-image: url("../images/edit.png");
 	background-size: 20px 20px;
 	background-repeat: no-repeat;
 }
@@ -471,7 +471,7 @@ font-size: 1.8rem;
 	height: 20px;
 	right: 20px;
 	cursor: pointer;
-	background-image: url('images/trash.png');
+	background-image: url('../images/trash.png');
 	background-size: 20px 20px;
 	background-repeat: no-repeat;
 }
