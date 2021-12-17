@@ -32,7 +32,7 @@ const DELETE = "delete", EDIT = "edit";
 ENTRY_LIST = JSON.parse(localStorage.getItem("entry_list")) || [];
 updateUI();
 
-// EVENT LISTENERS
+// Event li
 Expense_Button.addEventListener("click", function(){
     show(Expense);
     hide( [Income, All] );
@@ -52,7 +52,7 @@ All_Button.addEventListener("click", function(){
     inactive( [Income_Button, Expense_Button] );
 })
 
-// Erreur Message
+// Error Message
 Expense_Add.addEventListener("click", function(){
     // IF ONE OF THE INPUTS IS EMPTY => EXIT
     if(!Expense_Title.value || !Expense_Amount.value ) 
