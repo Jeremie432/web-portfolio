@@ -32,7 +32,7 @@ const DELETE = "delete", EDIT = "edit";
 ENTRY_LIST = JSON.parse(localStorage.getItem("entry_list")) || [];
 updateUI();
 
-// EVENT LISTENERS
+// Event listener
 Expense_Button.addEventListener("click", function(){
     show(Expense);
     hide( [Income, All] );
@@ -63,7 +63,7 @@ Expense_Add.addEventListener("click", function(){
     // IF ONE OF THE INPUTS IS EMPTY => EXIT
     if(!Expense_Title.value || !Expense_Amount.value ) return;
 
-    // SAVE THE ENTRY TO ENTRY_LIST
+    // Save value
     let expense = {
         type : "expense",
         title : Expense_Title.value,
@@ -102,7 +102,7 @@ List_Income.addEventListener("click", deleteOrEdit);
 List_Expense.addEventListener("click", deleteOrEdit);
 List_All.addEventListener("click", deleteOrEdit);
 
-// HELPERS
+// Delete or Edit value
 
 function deleteOrEdit(event){
     const targetBtn = event.target;
