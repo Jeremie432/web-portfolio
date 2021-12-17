@@ -52,11 +52,11 @@ All_Button.addEventListener("click", function(){
     inactive( [Income_Button, Expense_Button] );
 })
 
-// Erreur Message
+// Error Message
 Expense_Add.addEventListener("click", function(){
     // IF ONE OF THE INPUTS IS EMPTY => EXIT
     if(!Expense_Title.value || !Expense_Amount.value ) 
-    alert("Title and Rs must be filled up")
+    alert("Title and Rs should not be empty")
 })
 
 Expense_Add.addEventListener("click", function(){
@@ -78,7 +78,7 @@ Expense_Add.addEventListener("click", function(){
 Income_Add.addEventListener("click", function(){
     // IF ONE OF THE INPUTS IS EMPTY => EXIT
     if(!Income_Title.value || !Income_Amount.value ) 
-    alert("Error")
+    alert("Title and Rs should not be empty")
 })
 
 Income_Add.addEventListener("click", function(){
