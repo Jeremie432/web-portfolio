@@ -10,29 +10,30 @@ const List_Expense = document.querySelector("#expense .list");
 const List_All = document.querySelector("#all .list");
 
 // Button
-const Expense_Button = document.querySelector(".tab1");
-const Income_Button = document.querySelector(".tab2");
-const All_Button = document.querySelector(".tab3");
+const Expense_Button = document.querySelector(".nav1");
+const Income_Button = document.querySelector(".nav2");
+const All_Button = document.querySelector(".nav3");
 
-// Input
+// Input Expense
 const Expense_Add = document.querySelector(".add-expense");
 const Expense_Title = document.getElementById("expense-title-input");
 const Expense_Amount = document.getElementById("expense-amount-input");
 
+// Input Income
 const Income_Add = document.querySelector(".add-income");
 const Income_Title = document.getElementById("income-title-input");
 const Income_Amount = document.getElementById("income-amount-input");
 
 // Variables
-let ENTRY_LIST;
+let LIST_ENTRY;
 let balance = 0, income = 0, outcome = 0;
 const DELETE = "delete", EDIT = "edit";
 
 // Local storage
-ENTRY_LIST = JSON.parse(localStorage.getItem("entry_list")) || [];
+LIST_ENTRY = JSON.parse(localStorage.getItem("list_entry")) || [];
 updateUI();
 
-// Event li
+// Click event 
 Expense_Button.addEventListener("click", function(){
     show(Expense);
     hide( [Income, All] );
@@ -52,79 +53,77 @@ All_Button.addEventListener("click", function(){
     inactive( [Income_Button, Expense_Button] );
 })
 
-// Error Message
+// Error message condition when empty
 Expense_Add.addEventListener("click", function(){
-    // IF ONE OF THE INPUTS IS EMPTY => EXIT
     if(!Expense_Title.value || !Expense_Amount.value ) 
-    alert("Title and Rs must be filled up")
+    alert("Title and Rs must not be empty")
 })
 
 Expense_Add.addEventListener("click", function(){
-    // IF ONE OF THE INPUTS IS EMPTY => EXIT
-    if(!Expense_Title.value || !Expense_Amount.value ) return;
+    if(!Expense_Title.value || !Expense_Amount.value )
+    return;
 
-    // SAVE THE ENTRY TO ENTRY_LIST
+    // Save the value for the entry
     let expense = {
         type : "expense",
         title : Expense_Title.value,
         amount : parseInt(Expense_Amount.value)
     }
-    ENTRY_LIST.push(expense);
+    LIST_ENTRY.push(expense);
 
     updateUI();
-    clearInput( [Expense_Title, Expense_Amount] )
+    Input_clear( [Expense_Title, Expense_Amount] )
 })
 
+// Error message condition when empty
 Income_Add.addEventListener("click", function(){
-    // IF ONE OF THE INPUTS IS EMPTY => EXIT
     if(!Income_Title.value || !Income_Amount.value ) 
-    alert("Error")
+    alert("Title and Rs must not be empty")
 })
 
 Income_Add.addEventListener("click", function(){
-    // IF ONE OF THE INPUTS IS EMPTY => EXIT
     if(!Income_Title.value || !Income_Amount.value ) 
     return;
 
-    // SAVE THE ENTRY TO ENTRY_LIST
+    // This is to save the entry
     let income = {
         type : "income",
         title : Income_Title.value,
         amount : parseInt(Income_Amount.value)
     }
-    ENTRY_LIST.push(income);
+    LIST_ENTRY.push(income);
 
     updateUI();
-    clearInput( [Income_Title, Income_Amount] )
+    Input_clear( [Income_Title, Income_Amount] )
 })
 
 List_Income.addEventListener("click", deleteOrEdit);
 List_Expense.addEventListener("click", deleteOrEdit);
 List_All.addEventListener("click", deleteOrEdit);
 
-// HELPERS
-
+// delete or edit
 function deleteOrEdit(event){
-    const targetBtn = event.target;
+    const Button_target = event.target;
 
-    const entry = targetBtn.parentNode;
+    const entry = Button_target.parentNode;
 
-    if( targetBtn.id == DELETE ){
+    if( Button_target.id == DELETE ){
         deleteEntry(entry);
-    }else if(targetBtn.id == EDIT ){
-        editEntry(entry);
+    }else if(Button_target.id == EDIT ){
+        Entry_edit(entry);
     }
 }
 
 function deleteEntry(entry){
-    ENTRY_LIST.splice( entry.id, 1);
+    LIST_ENTRY.splice( entry.id, 1);
 
     updateUI();
 }
 
-function editEntry(entry){
+// Edit any entry
+function Entry_edit(entry){
     console.log(entry)
-    let ENTRY = ENTRY_LIST[entry.id];
+    let ENTRY = LIST_ENTRY[entry.id];
 
     if(ENTRY.type == "income"){
         Income_Amount.value = ENTRY.amount;
@@ -137,22 +136,23 @@ function editEntry(entry){
     deleteEntry(entry);
 }
 
+// Update
 function updateUI(){
-    income = calculateTotal("income", ENTRY_LIST);
-    outcome = calculateTotal("expense", ENTRY_LIST);
+    income = calculateTotal("income", LIST_ENTRY);
+    outcome = calculateTotal("expense", LIST_ENTRY);
     balance = Math.abs(calculateBalance(income, outcome));
 
-    // DETERMINE SIGN OF BALANCE
+    // balance sign if it is positive or negative
     let sign = (income >= outcome) ? "Rs" : "-Rs";
 
-    // UPDATE UI
+    // To update values
     Balance.innerHTML = `<small>${sign}</small>${balance}`;
     Outcome_Total.innerHTML = `<small>Rs</small>${outcome}`;
     Income_Total.innerHTML = `<small>Rs</small>${income}`;
 
     clearElement( [List_Expense, List_Income, List_All] );
 
-    ENTRY_LIST.forEach( (entry, index) => {
+    LIST_ENTRY.forEach( (entry, index) => {
         if( entry.type == "expense" ){
             showEntry(List_Expense, entry.type, entry.title, entry.amount, index)
         }else if( entry.type == "income" ){
@@ -163,9 +163,10 @@ function updateUI(){
 
     updateChart(income, outcome);
 
-    localStorage.setItem("entry_list", JSON.stringify(ENTRY_LIST));
+    localStorage.setItem("list_entry", JSON.stringify(LIST_ENTRY));
 }
 
+// Display all entries
 function showEntry(list, type, title, amount, id){
 
     const entry = ` <li id = "${id}" class="${type}">
@@ -179,33 +180,39 @@ function showEntry(list, type, title, amount, id){
     list.insertAdjacentHTML(position, entry);
 }
 
+// To clear all data
 function clearElement(elements){
     elements.forEach( element => {
         element.innerHTML = "";
     })
 }
 
+// Calculate the total value for balance
 function calculateTotal(type, list){
-    let sum = 0;
+    let Totalbalance = 0;
 
     list.forEach( entry => {
         if( entry.type == type ){
-            sum += entry.amount;
+            Totalbalance += entry.amount;
         }
     })
 
-    return sum;
+    return Totalbalance;
 }
 
+// Balance remaining 
 function calculateBalance(income, outcome){
     return income - outcome;
 }
 
-function clearInput(inputs){
+// Clear input
+function Input_clear(inputs){
     inputs.forEach( input => {
         input.value = "";
     })
 }
+
+// function for navigation bar
 function show(element){
     element.classList.remove("hide");
 }
