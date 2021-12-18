@@ -1,20 +1,19 @@
-/*Import font*/
+/*Import font normal*/
 @font-face
 {
 	font-family: 'OpenSans';
 	src: url('assets/OpenSans_Condensed-Regular.ttf') format('ttf');
 	font-weight: bold;
 	font-style: normal;
-}
-
-@font-face
-{
-	font-family: 'OpenSans Bold';
+    
+    font-family: 'OpenSans Bold';
 	src: url('assets/OpenSans_Condensed-Bold.ttf') format('ttf');
 	font-weight: bold;
 	font-style: normal;
 }
 
+
+/*Styling for h1*/
 h1
 {
 	color: white;
@@ -22,6 +21,7 @@ h1
 	font-family: 'OpenSans Bold';
 }
 
+/*font and colour for body*/
 body
 {
 	background-color: #000;
@@ -51,17 +51,20 @@ input[type=number]
 	-moz-appearance: textfield;
 }
 
-.budget-container
+/*Layout for container*/
+
+.container
 {
 	width:1920px;
-	height:500px;
+	height:800px;
 }
 
+/*Layout for header*/
 .budget-header .balance
 {
 	float: left;
 	margin-top: 120px;
-	margin-left: 10px;
+	margin-left: 20px;
 }
 
 .budget-header .balance .title
@@ -86,7 +89,7 @@ input[type=number]
     float: right;
 	display: inline-block;
 	margin: 0 auto 0;
-	line-height: 2.2rem;
+	line-height: 2.0rem;
 	text-align: center;
 }
 
@@ -108,25 +111,25 @@ input[type=number]
 {
 	color: #f0624d;
 	opacity: 0.5;
-font-size: 2.0rem;
+    font-size: 2.0rem;
 }
 
 .budget-header .account .outcome .outcome-total
 {
 	color: #f0624d;
 	font-family: 'OpenSans Bold';
-font-size: 1.8rem;
+    font-size: 1.8rem;
 }
 
-/*Dashboard*/
-.budget-dashboard
+/*Control panel layout*/
+.control-panel
 {
 	max-height: 530px;
 	display: inline-block;
 	background-color: #cbcbcb;
 }
 
-.budget-dashboard .dash-title
+.control-panel .dash-title
 {
 	display: inline-block;
 	color: #1a0034;
@@ -136,6 +139,8 @@ font-size: 1.8rem;
 	font-family: 'OpenSans Bold';
 }
 
+/*Navigation bar*/
+
 .toggle
 {
 	display: block;
@@ -143,7 +148,7 @@ font-size: 1.8rem;
 	margin-left: 20px;
 }
 
-.toggle .tab1, .tab2, .tab3
+.toggle .nav1, .nav2, .nav3
 {
 	display: inline-block;
 	cursor: pointer;
@@ -153,7 +158,7 @@ font-size: 1.8rem;
 	opacity: 0.4;
 }
 
-.toggle .tab2, .tab3
+.toggle .nav2, .nav3
 {
 	margin-left: 10px;
 }
@@ -163,14 +168,15 @@ font-size: 1.8rem;
 	opacity : 1 !important;
 }
 
+/*hide when not use*/
 .hide
 {
 	display: none;
 }
 
-.budget-dashboard input
+/*Selectable input*/
+.control-panel input
 {
-	/* MAKE INPUT SELECTABLE */
 	-webkit-user-select: auto;
 	-moz-user-select: auto;
 	-ms-user-select: auto;
@@ -178,14 +184,14 @@ font-size: 1.8rem;
 }
 
 /*All*/
-.budget-dashboard #all
+.control-panel #all
 {
 	width: 360px;
 	height: 339px;
 	position: relative;
 }
 
-.budget-dashboard #all ul
+.control-panel #all ul
 {
 	width: 360px;
 	height: 285px;
@@ -196,36 +202,35 @@ font-size: 1.8rem;
 	overflow-x: auto;
 }
 
-.budget-dashboard #all ul.list li
+.control-panel #all ul.list li
 {
 	position: relative;
 	font-size: 1rem;
 }
 
-.budget-dashboard #all ul.list li *
+.control-panel #all ul.list li *
 {
 	display: inline-block;
 	height: 30px;
 	vertical-align: middle;
 }
 
-.budget-dashboard #all ul.list li .entry
+.control-panel #all ul.list li .entry
 {
 	width:250px;
 	height: auto;
 	padding-left: 20px;
 	margin-bottom: 10px;
-	;
 	word-wrap: break-word;
 	font-family: 'OpenSans Bold';
 }
 
-.budget-dashboard #all ul.list li #edit
+.control-panel #all ul.list li #edit
 {
 	visibility: hidden;
 }
 
-.budget-dashboard #all ul.list li #delete
+.control-panel #all ul.list li #delete
 {
 	position: absolute;
 	width:20px;
@@ -237,24 +242,20 @@ font-size: 1.8rem;
 	background-repeat: no-repeat;
 }
 
-.budget-dashboard #all ul.list li.income
-{
-}
-
-.budget-dashboard #all ul.list li.expense
+.control-panel #all ul.list li.expense
 {
 	color: #f0624d;
 }
 
 /*Expenses*/
-.budget-dashboard #expense
+.control-panel #expense
 {
 	width: 360px;
 	height: 339px;
 	position: relative;
 }
 
-.budget-dashboard #expense .input
+.control-panel #expense .input
 {
 	position: absolute;
 	display: block;
@@ -263,16 +264,16 @@ font-size: 1.8rem;
 	border-top: 1px solid #ccc;
 }
 
-.budget-dashboard #expense .input *
+.control-panel #expense .input *
 {
 	display: inline-block;
 	vertical-align: middle;
 }
 
-.budget-dashboard #expense .input input#expense-title-input
+.control-panel #expense .input input#expense-title-input
 {
 	height: 40px;
-	width : 160px;
+	width : 145px;
 	padding-left: 10px;
 	font-size: 1.2rem;
 	font-family: 'OpenSans';
@@ -281,27 +282,26 @@ font-size: 1.8rem;
 	border: none;
 }
 
-.budget-dashboard #expense .input input#expense-amount-input
+.control-panel #expense .input input#expense-amount-input
 {
 	height: 40px;
 	width : 115px;
 	padding-left: 10px;
-	font-size: 1.2em;
+	font-size: 1.2rem;
 	font-family: 'OpenSans';
 	margin: 5px;
 	margin-left: -10px;
-	border-radius: 0 10px 10px 0;
 	border: none;
 }
 
-.budget-dashboard #expense .input .add-expense img
+.control-panel #expense .input .add-expense img
 {
 	width: 40px;
 	height: 40px;
 	cursor: pointer;
 }
 
-.budget-dashboard #expense ul
+.control-panel #expense ul
 {
 	width: 360px;
 	height: 285px;
@@ -312,20 +312,20 @@ font-size: 1.8rem;
 	overflow-x: auto;
 }
 
-.budget-dashboard #expense ul.list li
+.control-panel #expense ul.list li
 {
 	position: relative;
-	font-size: 1em;
+	font-size: 1rem;
 }
 
-.budget-dashboard #expense ul.list li *
+.control-panel #expense ul.list li *
 {
 	display: inline-block;
 	height: 30px;
 	vertical-align: middle;
 }
 
-.budget-dashboard #expense ul.list li .entry
+.control-panel #expense ul.list li .entry
 {
 	width:250px;
 	height: auto;
@@ -337,7 +337,7 @@ font-size: 1.8rem;
 	color: #f0624d;
 }
 
-.budget-dashboard #expense ul.list li #edit
+.control-panel #expense ul.list li #edit
 {
 	position: absolute;
 	width:20px;
@@ -349,7 +349,7 @@ font-size: 1.8rem;
 	background-repeat: no-repeat;
 }
 
-.budget-dashboard #expense ul.list li #delete
+.control-panel #expense ul.list li #delete
 {
 	position: absolute;
 	width:20px;
@@ -362,14 +362,15 @@ font-size: 1.8rem;
 }
 
 /*Income*/
-.budget-dashboard #income
+
+.control-panel #income
 {
 	width: 360px;
 	height: 339px;
 	position: relative;
 }
 
-.budget-dashboard #income .input
+.control-panel #income .input
 {
 	position: absolute;
 	display: block;
@@ -378,46 +379,45 @@ font-size: 1.8rem;
 	border-top: 1px solid #ccc;
 }
 
-.budget-dashboard #income .input *
+.control-panel #income .input *
 {
 	display: inline-block;
 	vertical-align: middle;
 }
 
-.budget-dashboard #income .input input#income-title-input
+.control-panel #income .input input#income-title-input
 {
 	height: 40px;
-	width : 150px;
+	width : 145px;
 	padding-left: 10px;
-	font-size: 1.2em;
+	font-size: 1.2rem;
 	font-family: 'OpenSans';
 	margin: 5px;
 	margin-left: 10px;
-	border-radius: 10px 0 0 10px;
 	border: none;
+    
 }
 
-.budget-dashboard #income .input input#income-amount-input
+.control-panel #income .input input#income-amount-input
 {
 	height: 40px;
-	width : 110px;
+	width : 115px;
 	padding-left: 10px;
-	font-size: 1.2em;
+	font-size: 1.2rem;
 	font-family: 'OpenSans';
 	margin: 5px;
 	margin-left: -10px;
-	border-radius: 0 10px 10px 0;
 	border: none;
 }
 
-.budget-dashboard #income .input .add-income img
+.control-panel #income .input .add-income img
 {
 	width: 40px;
 	height: 40px;
 	cursor: pointer;
 }
 
-.budget-dashboard #income ul
+.control-panel #income ul
 {
 	width: 360px;
 	height: 285px;
@@ -428,31 +428,30 @@ font-size: 1.8rem;
 	overflow-x: auto;
 }
 
-.budget-dashboard #income ul.list li
+.control-panel #income ul.list li
 {
 	position: relative;
-	font-size: 1em;
+	font-size: 1rem;
 }
 
-.budget-dashboard #income ul.list li *
+.control-panel #income ul.list li *
 {
 	display: inline-block;
 	height: 30px;
 	vertical-align: middle;
 }
 
-.budget-dashboard #income ul.list li .entry
+.control-panel #income ul.list li .entry
 {
 	width:250px;
 	height: auto;
 	padding-left: 20px;
 	margin-bottom: 10px;
-	;
 	word-wrap: break-word;
 	font-family: 'OpenSans Bold';
 }
 
-.budget-dashboard #income ul.list li #edit
+.control-panel #income ul.list li #edit
 {
 	position: absolute;
 	width:20px;
@@ -464,7 +463,7 @@ font-size: 1.8rem;
 	background-repeat: no-repeat;
 }
 
-.budget-dashboard #income ul.list li #delete
+.control-panel #income ul.list li #delete
 {
 	position: absolute;
 	width:20px;
@@ -486,7 +485,7 @@ font-size: 1.8rem;
     
     }
     
-	.budget-dashboard, .budget-container
+	.control-panel, .container
 	{
 		width: 100%;
 		height: 800px;
@@ -496,7 +495,7 @@ font-size: 1.8rem;
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px)
 {
-	.budget-dashboard, .budget-container
+	.control-panel, .container
 	{
 		width: 100%;
 		height: 800px;
@@ -506,7 +505,7 @@ font-size: 1.8rem;
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px)
 {
-	.budget-dashboard, .budget-container
+	.control-panel, .container
 	{
 		width: 100%;
 		height: 800px;
@@ -516,7 +515,7 @@ font-size: 1.8rem;
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px)
 {
-	.budget-dashboard, .budget-container
+	.control-panel, .container
 	{
 		width: 100%;
 		height: 800px;
@@ -526,7 +525,7 @@ font-size: 1.8rem;
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px)
 {
-	.budget-dashboard, .budget-container
+	.control-panel, .container
 	{
 		width: 100%;
 		height: 800px;
