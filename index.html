@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="css/site.css">
     </head>
 	<body>
-		<div class="budget-container">
+		<div class="container">
 			<h1>Expense Tracker</h1>
 			<div class="budget-header">
 				<div class="balance">
@@ -19,7 +19,6 @@
 						<small>
 							Rs
 						</small>
-						0
 					</div>
 				</div>
 				<div class="account">
@@ -31,7 +30,6 @@
 							<small>
 								Rs
 							</small>
-							0
 						</div>
 					</div>
 					<div class="chart"></div>
@@ -43,23 +41,22 @@
 							<small>
 								Rs
 							</small>
-							0
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="budget-dashboard">
+			<div class="control-panel">
 				<div class="dash-title">
-					Dashboard
+					Control Panel
 				</div>
 				<div class="toggle">
-					<div class="tab1">
+					<div class="nav1 active">
 						Expenses
 					</div>
-					<div class="tab2">
+					<div class="nav2">
 						Incomes
 					</div>
-					<div class="tab3 active">
+					<div class="nav3">
 						All
 					</div>
 				</div>
@@ -67,7 +64,7 @@
 					<ul class="list"></ul>
 					<div class="input">
 						<input type="text" id="income-title-input" name="title" placeholder="Title">
-						<input type="number" id="income-amount-input" name="amount" placeholder="Rs0">
+						<input type="number" id="income-amount-input" name="amount" placeholder="Rs 0">
 						<div class="add-income">
 							<img src="images/plus.png" alt="plus">
 						</div>
@@ -77,7 +74,7 @@
 					<ul class="list"></ul>
 					<div class="input">
 						<input type="text" id="expense-title-input" name="title" placeholder="Title">
-						<input type="number" id="expense-amount-input" name="amount" placeholder="Rs0">
+						<input type="number" id="expense-amount-input" name="amount" placeholder="Rs 0">
 						<div class="add-expense">
 							<img src="images/plus.png" alt="plus">
 						</div>
@@ -89,6 +86,6 @@
 			</div>
 		</div>
 		<script src="js/chart.js"></script>
-		<script src="js/budget.js"></script>
+		<script src="js/calculation.js"></script>
 	</body>
 </html>
